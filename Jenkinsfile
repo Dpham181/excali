@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-		DockerHub_Authentication=credentials('Docker-hub-Auth')
+		DockerHub_Authentication=credentials('Docker-hub-Auth1')
 	}
     tools {
       maven 'mvn' 
@@ -30,7 +30,7 @@ pipeline {
          stage('docker hub authentication ') {
 
 			steps {
-				bat 'docker login -u $DockerHub_Authentication --password-stdin'
+				bat 'echo $DockerHub_Authentication_PSW | docker login -u $DockerHub_Authentication_USR --password-stdin'
 			}
 		}
 
