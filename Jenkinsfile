@@ -30,7 +30,7 @@ pipeline {
          stage('docker hub authentication ') {
 
 			steps {
-				bat 'docker login -u $DockerHub_Authentication_USR -p $DockerHub_Authentication_PSW'
+				bat 'docker login -u %DockerHub_Authentication_USR%  -p %DockerHub_Authentication_PSW%'
 			}
 		}
 
