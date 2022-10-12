@@ -1,5 +1,5 @@
 pipeline {
-    agent {danhpham}
+    agent any
 
     stages {
         stage('git check out and maven build') {
