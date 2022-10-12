@@ -1,12 +1,12 @@
 pipeline {
     agent any
-    
-    tools {
-      maven 'mvn' 
-    }
     environment {
 		DockerHub_Authentication=credentials('dockerhubAuth')
 	}
+    tools {
+      maven 'mvn' 
+    }
+  
     stages {
         stage('git check out and maven build') {
             steps {
