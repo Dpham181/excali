@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-		DockerHub_Authentication=credentials('2610')
+		DockerHub_Authentication=credentials('Docker-hub-Auth')
 	}
     tools {
       maven 'mvn' 
