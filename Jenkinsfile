@@ -10,5 +10,11 @@ pipeline {
                bat 'mvn clean install'
             }
         }
+        
+          stage('docker build image') {
+            steps {
+              bat 'docker  build -t calitour' 
+            }
+        }
    }    
 }
