@@ -1,8 +1,12 @@
 pipeline {
     agent any
+    
     tools {
       maven 'mvn' 
     }
+    environment {
+		DockerHub_Authentication=credentials('dockerhubAuth')
+	}
     stages {
         stage('git check out and maven build') {
             steps {
@@ -23,6 +27,19 @@ pipeline {
             }
         }
         
+         stage('docker hub authentication ') {
+
+			steps {
+				bat 'docker login -u $DockerHub_Authentication --password-stdin'
+			}
+		}
+
+		stage('docker push to docker hub') {
+
+			steps {
+				bat 'docker push calitour:lasted'
+			}
+		}
         
    }    
 }
