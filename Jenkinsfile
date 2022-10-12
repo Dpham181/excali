@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-      maven 'mvn 3.8.6' 
+      maven 'mvn' 
     }
     stages {
         stage('git check out and maven build') {
