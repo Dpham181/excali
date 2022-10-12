@@ -13,7 +13,7 @@ pipeline {
         
           stage('docker build image') {
             steps {
-              bat 'docker  build -t calitour' 
+              bat 'docker  build -t calitour .' 
             }
         }
    }    
