@@ -19,7 +19,7 @@ pipeline {
         
              stage('docker deploy to localhost') {
             steps {
-              bat 'docker run -d -p 8080:80 ' 
+              bat 'docker run -d -p 8081:8083 .' 
             }
         }
         
