@@ -37,7 +37,7 @@ pipeline {
 		stage('docker push to docker hub') {
 
 			steps {
-				bat 'docker push dpham181/calitour'
+				bat 'docker push calitour dpham181/calitour'
 			}
 		}
         
