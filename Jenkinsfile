@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+      maven 'maven 3.8.6' 
+    }
     stages {
         stage('git check out and maven build') {
             steps {
@@ -8,15 +10,5 @@ pipeline {
                sh 'mvn clean install'
             }
         }
-        stage('docker build image') {
-            steps {
-               
-            }
-        }
-        stage('docker push hub') {
-            steps {
-               
-            }
-        }
-    }
+       
 }
