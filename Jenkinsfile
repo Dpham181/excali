@@ -17,7 +17,7 @@ pipeline {
         
           stage('docker build image') {
             steps {
-              bat 'docker  build -t calitour .' 
+              bat 'docker  build -t dpham181/calitour .' 
             }
         }
         
@@ -37,7 +37,7 @@ pipeline {
 		stage('docker push to docker hub') {
 
 			steps {
-				bat 'docker push calitour dpham181/calitour'
+				bat 'docker push  dpham181/calitour'
 			}
 		}
         
