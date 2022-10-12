@@ -16,5 +16,15 @@ pipeline {
               bat 'docker  build -t calitour .' 
             }
         }
+        
+             stage('docker deploy to localhost') {
+            steps {
+              bat 'docker run -p8080:80 .' 
+            }
+        }
+        
+          stage('docker  push to dockerhub') {
+          
+        }
    }    
 }
